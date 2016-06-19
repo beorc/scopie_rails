@@ -1,0 +1,3 @@
+module ScopieRails
+  # Your code goes here...
+end

@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    scopie_rails (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  scopie_rails!
+
+BUNDLED WITH
+   1.12.2
