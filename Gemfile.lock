@@ -82,7 +82,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
-    scopie (0.2.1)
+    scopie (0.3.0)
     slop (3.6.0)
     thread_safe (0.3.5)
     tzinfo (1.2.2)
