@@ -1,5 +1,5 @@
 ## ScopieRails
-Scopie for Rails
+[Scopie][s] for Rails
 
 ScopieRails allows you to map incoming controller parameters to named scopes in your resources.
 Imagine the following model called graduations:
@@ -73,3 +73,17 @@ Scopie supports several options:
 * `:except` - In which actions the scope is not applied.
 
 * `:default` - Default value for the scope. Whenever supplied the scope is always called.
+
+## Rails
+
+ScopieRails provides Rails integration for [Scopie][s].
+
+Among other things it adds a 'controller' method to scopies.
+
+## Thanks
+
+Scopie was inspired by [has_scope](http://github.com/plataformatec/has_scope) and [pundit](http://github.com/elabs/pubdit)
+
+Thanks to both.
+
+[s]: https://github.com/beorc/scopie
