@@ -41,4 +41,20 @@ describe ScopieRails do
       controller_instance.apply_scopes(target, hash: hash)
     end
   end
+
+  describe '.current_scopes' do
+    let(:scopie_class) { Admin::Scopies::HomeScopie }
+    let(:target) { double }
+    let(:scope_name) { :test_scope }
+    let(:another_scope_name) { :another_scope }
+    let(:hash) { { action: :index, scope_name => 'test' } }
+    let(:options) { Hash.new }
+
+    before(:each) { scopie_class.has_scope(scope_name, another_scope_name, options) }
+
+    it 'should return a hash that contains scopes with its values' do
+      scopes = controller_instance.current_scopes(hash: hash)
+      expect(scopes).to eq({ scope_name => hash[scope_name] })
+    end
+  end
 end

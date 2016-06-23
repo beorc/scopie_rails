@@ -2,9 +2,16 @@
 module ScopieRails::Controller
   extend ActiveSupport::Concern
 
-  def apply_scopes(target, scopie: nil, hash: params)
-    scopie ||= find_scopie_class.new(self)
+  def default_scopie
+    @default_scopie ||= find_scopie_class.new(self)
+  end
+
+  def apply_scopes(target, scopie: default_scopie, hash: params)
     Scopie.apply_scopes(target, hash, method: hash[:action], scopie: scopie)
+  end
+
+  def current_scopes(scopie: default_scopie, hash: params)
+    Scopie.current_scopes(hash, method: hash[:action], scopie: scopie)
   end
 
   included do
