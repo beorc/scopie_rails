@@ -1,4 +1,7 @@
 ## ScopieRails
+
+[![Code Climate](https://codeclimate.com/github/beorc/scopie_rails/badges/gpa.svg)](https://codeclimate.com/github/beorc/scopie_rails)
+
 [Scopie][s] for Rails
 
 ScopieRails allows you to map incoming controller parameters to named scopes in your resources and decouple mapping logic from controller.
