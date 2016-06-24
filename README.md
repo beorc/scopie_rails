@@ -81,6 +81,8 @@ Scopie supports several options:
 
 * `:in` - The key in the params hash expected to contain a hash holding scope name as a value.
 
+* `:allow_blank` - Blank values are not sent to scopes by default. Set to true to overwrite.
+
 * `:default` - Default value for the scope. Whenever supplied the scope is always called.
 
 ## Rails
