@@ -2,6 +2,10 @@
 module ScopieRails::Controller
   extend ActiveSupport::Concern
 
+  included do
+    class_attribute :scopie_class
+  end
+
   def default_scopie
     @default_scopie ||= find_scopie_class.new(self)
   end
@@ -14,24 +18,13 @@ module ScopieRails::Controller
     Scopie.current_scopes(hash, method: hash[:action], scopie: scopie)
   end
 
-  included do
-    class_attribute :scopie_class
+  def find_scopie_class
+    return self.class.scopie_class if self.class.scopie_class
 
-    def self.find_scopie_class(class_name = nil)
-      return scopie_class if scopie_class
+    scopie_name = params[:controller] + ScopieRails::SCOPIE_SUFFIX
 
-      class_name ||= name
+    self.class.scopie_class = scopie_name.camelize.constantize
 
-      ary = class_name.split(ScopieRails::CLASS_NAME_DELIMETER)
-      controller_class_name = ary.pop
-      base_class_name = controller_class_name.split(ScopieRails::CONTROLLER_DELIMETER).first
-      ary << ScopieRails::SCOPIE_PREFIX
-      ary << base_class_name + ScopieRails::SCOPIE_SUFFIX
-      scopie_class = ary.join(ScopieRails::CLASS_NAME_DELIMETER).constantize
-
-      scopie_class
-    end
-
-    delegate :find_scopie_class, to: :class
+    self.class.scopie_class
   end
 end

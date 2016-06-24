@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'scopie', '~> 0'
   s.add_runtime_dependency 'actionpack', '>= 4.1', '< 5.1'
   s.add_runtime_dependency 'activesupport', '>= 4.1', '< 5.1'
+  s.add_runtime_dependency 'railties'
 
   s.add_development_dependency 'rspec', '~> 3.4'
   s.add_development_dependency 'rubocop', '~> 0.40'
