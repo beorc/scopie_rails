@@ -19,7 +19,7 @@ end
 You can use those named scopes as filters by declaring them on your scopie:
 
 ```ruby
-class Scopies::GraduationsScopie < ScopieRails::Base
+class GraduationsScopie < ScopieRails::Base
   has_scope :featured, type: :boolean
   has_scope :by_degree, :by_period
   has_scope :page, default: 1
