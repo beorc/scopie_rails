@@ -9,9 +9,7 @@ module ScopieRails
 
   SCOPIE_SUFFIX = '_scopie'
 
-  if defined?(Rails)
-    require 'scopie_rails/engine'
-  end
+  require 'scopie_rails/engine' if defined?(Rails)
   require 'scopie_rails/base'
   require 'scopie_rails/controller'
 
