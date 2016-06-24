@@ -79,6 +79,8 @@ Scopie supports several options:
 
 * `:as` - The key in the params hash expected to find the scope. Defaults to the scope name.
 
+* `:in` - The key in the params hash expected to contain a hash holding scope name as a value.
+
 * `:default` - Default value for the scope. Whenever supplied the scope is always called.
 
 ## Rails
