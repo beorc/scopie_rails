@@ -5,6 +5,6 @@ install: "bundle install --path vendor/bundle"
 cache:
   directories:
     - vendor/bundle
-script: "bundle exec rspec --tag ~listen"
+script: "TRAVIS_CI=true bundle exec rspec --tag ~listen"
 os:
   - linux

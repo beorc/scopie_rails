@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 
-require 'coveralls'
-Coveralls.wear!
+require 'simplecov'
+SimpleCov.minimum_coverage 100
+SimpleCov.start
+
+if ENV['TRAVIS_CI']
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
 
 require 'scopie_rails'
 
