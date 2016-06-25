@@ -143,7 +143,7 @@ Scopie supports several options:
 
 ScopieRails provides Rails integration for [Scopie][s].
 
-Among other things it adds a 'controller' method to scopies.
+Among other things it adds a `controller` method to scopies.
 
 ## Thanks
 
