@@ -6,9 +6,7 @@
 [![Dependency Status](https://gemnasium.com/beorc/scopie_rails.svg)](https://gemnasium.com/beorc/scopie_rails)
 [![Gem Version](https://badge.fury.io/rb/scopie_rails.svg)](https://badge.fury.io/rb/scopie_rails)
 
-[Scopie][s] for Rails
-
-A [has_scope](http://github.com/plataformatec/has_scope) alternative.
+[Scopie][s] for Rails, a [has_scope](http://github.com/plataformatec/has_scope) alternative.
 
 ScopieRails allows you to map incoming controller parameters to named scopes in your resources through OO design.
 
