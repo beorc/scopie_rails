@@ -35,10 +35,14 @@ You can use those named scopes as filters by declaring them on your scopie:
 class GraduationsScopie < ScopieRails::Base
 
   has_scope :featured, type: :boolean
-  has_scope :by_degree, :by_period
+  has_scope :by_degree, type: :integer
+  has_scope :by_period
 
   has_scope :created_at_greater_than, in: :created_at, as: :start_at
   has_scope :created_at_less_than, in: :created_at, as: :end_at
+
+  has_scope :updated_at_greater_than, in: :updated_at, as: :start_at, type: :date
+  has_scope :updated_at_less_than, in: :updated_at, as: :end_at, type: :date
 
   has_scope :page, default: 1
   has_scope :per, default: 30
@@ -56,6 +60,14 @@ class GraduationsScopie < ScopieRails::Base
 
   def created_at_less_than(scope, value, _hash)
     scope.created_at_less_than(parse_date(value))
+  end
+
+  def updated_at_greater_than(scope, value, _hash)
+    scope.updated_at_greater_than(value)
+  end
+
+  def updated_at_less_than(scope, value, _hash)
+    scope.updated_at_less_than(value)
   end
 
   private
