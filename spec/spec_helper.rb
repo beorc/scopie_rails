@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-require 'simplecov'
-SimpleCov.minimum_coverage 100
-SimpleCov.start
+require 'coveralls'
+Coveralls.wear!
 
 require 'scopie_rails'
 

@@ -1,16 +1,22 @@
 ## ScopieRails
 
 [![Code Climate](https://codeclimate.com/github/beorc/scopie_rails/badges/gpa.svg)](https://codeclimate.com/github/beorc/scopie_rails)
+[![Build Status](https://travis-ci.org/beorc/scopie_rails.svg?branch=master)](https://travis-ci.org/beorc/scopie_rails)
+[![Coverage Status](https://coveralls.io/repos/github/beorc/scopie_rails/badge.svg?branch=master)](https://coveralls.io/github/beorc/scopie_rails?branch=master)
+[![Dependency Status](https://gemnasium.com/beorc/scopie_rails.svg)](https://gemnasium.com/beorc/scopie_rails)
+[![Gem Version](https://badge.fury.io/rb/scopie_rails.svg)](https://badge.fury.io/rb/scopie_rails)
 
 [Scopie][s] for Rails
 
-It is similar to [has_scope](http://github.com/plataformatec/has_scope).
+A [has_scope](http://github.com/plataformatec/has_scope) alternative.
 
-The key differences are:
+ScopieRails allows you to map incoming controller parameters to named scopes in your resources through OO design.
 
-* Dedicated class where the scopes are defined, so that your controller will be skinny.
-* To override default mapping behavior you don't need to pass a block - just define a method with the same name as scope.
-* You can DRY your custom scopes mapping logic by using helper methods defined in scopie class and use the same scopie class in multiple controllers.
+Motivation:
+
+* Dedicated class for scopes mapping, so that the logic is isolated and your controller is skinny.
+* Ability to override default mapping behavior by definition of a method with the same name as scope in the scopie class.
+* Ability to DRY your custom scopes mapping logic using private methods defined in scopie class and use the same scopie class in multiple controllers.
 
 Imagine the following model called graduations:
 
@@ -35,8 +41,7 @@ You can use those named scopes as filters by declaring them on your scopie:
 class GraduationsScopie < ScopieRails::Base
 
   has_scope :featured, type: :boolean
-  has_scope :by_degree, type: :integer
-  has_scope :by_period
+  has_scope :by_degree, :by_period
 
   has_scope :created_at_greater_than, in: :created_at, as: :start_at
   has_scope :created_at_less_than, in: :created_at, as: :end_at
