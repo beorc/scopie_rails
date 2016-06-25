@@ -21,10 +21,10 @@ class Graduation < ActiveRecord::Base
   scope :by_degree, -> (degree) { where(degree: degree) }
   scope :by_period, -> (started_at, ended_at) { where('started_at = ? AND ended_at = ?', started_at, ended_at) }
 
-  scope :created_at_greater_than, ->(date) { where('entities.created_at >= ?', date.beginning_of_day) }
-  scope :created_at_less_than, ->(date) { where('entities.created_at <= ?', date.end_of_day) }
-  scope :updated_at_greater_than, ->(date) { where('entities.updated_at >= ?', date.beginning_of_day) }
-  scope :updated_at_less_than, ->(date) { where('entities.updated_at <= ?', date.end_of_day) }
+  scope :created_at_greater_than, ->(date) { where('created_at >= ?', date.beginning_of_day) }
+  scope :created_at_less_than, ->(date) { where('created_at <= ?', date.end_of_day) }
+  scope :updated_at_greater_than, ->(date) { where('updated_at >= ?', date.beginning_of_day) }
+  scope :updated_at_less_than, ->(date) { where('updated_at <= ?', date.end_of_day) }
 
 end
 ```
