@@ -13,7 +13,7 @@ ScopieRails allows you to map incoming controller parameters to named scopes in 
 Motivation:
 
 * Dedicated class for scopes mapping, so that the logic is isolated and your controller is skinny.
-* Ability to override default mapping behavior by definition of a method with the same name as scope in the scopie class.
+* Ability to override default mapping behavior by definition of a method having the same name as a scope in the scopie class.
 * Ability to use the object oriented approach to DRY your custom scopes mapping logic and reuse the scopie class.
 
 Imagine the following model called graduations:
