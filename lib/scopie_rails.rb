@@ -7,7 +7,7 @@ require 'active_support/core_ext/string/inflections'
 
 module ScopieRails
 
-  SCOPIE_SUFFIX = '_scopie'
+  SCOPIE_SUFFIX = '_scopie'.freeze
 
   require 'scopie_rails/version'
   require 'scopie_rails/engine' if defined?(Rails)

@@ -1,8 +1,5 @@
 AllCops:
-  TargetRubyVersion: 2.3
-  Exclude:
-    - 'vendor/**/*'
-    - 'bin/*'
+  TargetRubyVersion: 2.2
 
 Style/SpaceAroundEqualsInParameterDefault:
   Enabled: true
@@ -196,9 +193,6 @@ Style/CommentAnnotation:
   Enabled: true
 
 Style/CommentIndentation:
-  Enabled: true
-
-Style/DeprecatedHashMethods:
   Enabled: true
 
 Style/Documentation:

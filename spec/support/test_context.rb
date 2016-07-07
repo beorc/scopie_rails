@@ -12,4 +12,7 @@ module Admin
 
   class HomeScopie < ScopieRails::Base
   end
+
+  class SharedScopie < ScopieRails::Base
+  end
 end

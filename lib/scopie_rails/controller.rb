@@ -35,12 +35,10 @@ module ScopieRails::Controller
   end
 
   def find_scopie_class
-    return self.class.scopie_class if self.class.scopie_class
+    return scopie_class if scopie_class
 
     scopie_name = params[:controller] + ScopieRails::SCOPIE_SUFFIX
 
-    self.class.scopie_class = scopie_name.camelize.constantize
-
-    self.class.scopie_class
+    self.scopie_class = scopie_name.camelize.constantize
   end
 end

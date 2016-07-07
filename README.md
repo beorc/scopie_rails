@@ -121,6 +121,10 @@ Add `scopie_rails` to your Gemfile or install it from Rubygems.
 gem 'scopie_rails'
 ```
 
+## Mutation testing
+
+    mutant --include lib --require scopie_rails --use rspec ScopieRails*
+
 ## Options
 
 Scopie supports several options:
