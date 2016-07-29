@@ -141,6 +141,8 @@ Scopie supports several options:
 
 * `:allow_blank` - Blank values are not sent to scopes by default. Set to true to overwrite.
 
+* `:ignore_blank` - Set to true to not apply the scope if blank value is given.
+
 * `:default` - Default value for the scope. Whenever supplied the scope is always called.
 
 ## Rails
