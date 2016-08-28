@@ -1,0 +1,8 @@
+Description:
+    Generates a scopie for a controller with the given name.
+
+Example:
+    rails generate scopie_rails:scopie items
+
+    This will create:
+app/scopies/items_scopie.rb
