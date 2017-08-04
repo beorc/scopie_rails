@@ -18,6 +18,6 @@ Gem::Specification.new do |s|
   s.files = Dir['{lib}/**/*', 'LICENSE', 'README.md']
 
   s.add_runtime_dependency 'scopie', '~> 1'
-  s.add_runtime_dependency 'actionpack', '>= 3.2', '< 5.1'
-  s.add_runtime_dependency 'activesupport', '>= 3.2', '< 5.1'
+  s.add_runtime_dependency 'actionpack', '>= 3.2', '<= 5.1.3'
+  s.add_runtime_dependency 'activesupport', '>= 3.2', '<= 5.1.3'
 end
